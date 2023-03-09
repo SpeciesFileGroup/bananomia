@@ -20,44 +20,59 @@ Or install it yourself as:
 
 ## Usage
 
-Parse human names with names separated by `;` and each set separated by `\r\n`:
+
+---
+### Suggest Collector Names
+Get collector name suggestions:
 ```ruby
- res = Bonamia.parse(names: 'Henry Robert Nicollon des Abbayes; Groom Q\r\nMrs. John Errol Chandos Aberdeen') #  => MultiJson object
+Bonamia.suggest('Smith, Ja', limit: 1) #  => MultiJson object
 ```
 
-Get human name suggestions:
-```ruby
- res = Bonamia.suggest('anning', limit: 5) #  => MultiJson object
-```
-
+---
+### Search Collectors
 Search for collector:
 ```ruby
- res = Bonamia.search_people('Thomas McElrath', families_collected: 'Monotomidae') #  => MultiJson object
+Bonamia.search_people('Thomas McElrath', families_collected: 'Monotomidae') #  => MultiJson object
 ```
-
+---
+### Search Occurrences
 Search for occurrences by [GBIF](https://gbif.org) [datasetID](https://www.gbif.org/dataset/f86a681d-7db8-483b-819a-248def18b70a) and [occurrenceID](https://www.gbif.org/occurrence/1804069383):
 ```ruby
- res = Bonamia.search_occurrences('f86a681d-7db8-483b-819a-248def18b70a', '7a1daa39-8d7c-d7c4-968f-799d58b3c7b0') #  => MultiJson object
+Bonamia.search_occurrences('f86a681d-7db8-483b-819a-248def18b70a', '7a1daa39-8d7c-d7c4-968f-799d58b3c7b0') #  => MultiJson object
 ```
 
+---
+### Collectors
 Get a person's profile by their [ORCID](https://orcid.org/) or [WikiData](https://wikidata.org) identifiers:
 ```ruby
- res = Bonamia.person('0000-0001-7618-5230') #  => JSON-LD object
+Bonamia.person('0000-0001-7618-5230') #  => JSON-LD object
 ```
-
+---
+### Specimens
 Get a person's specimens by their [ORCID](https://orcid.org/) or [WikiData](https://wikidata.org) identifiers:
 ```ruby
- res = Bonamia.person('0000-0001-7618-5230', specimens: true) #  => JSON-LD object
+Bonamia.person('0000-0001-7618-5230', specimens: true) #  => JSON-LD object
 ```
 
 ```ruby
- res = Bonamia.person('0000-0001-7618-5230', specimens: true, csv: true) #  => comma-separated values
+Bonamia.person('0000-0001-7618-5230', specimens: true, csv: true) #  => comma-separated values
 ```
-
+---
+### Occurrences
 Get an occurrence with a [GBIF](https://www.gbif.org/occurrence/search) occurrenceID:
 ```ruby
- res = Bonamia.occurrence('477976412') #  => JSON-LD object
+Bonamia.occurrence('477976412') #  => JSON-LD object
 ```
+---
+### Parsing human names
+**Note:** [Bionomia](https://bionomia.net) provides a RESTful API for the human name parsing [dwc_agent](https://rubygems.org/gems/dwc_agent) gem which uses the [namae](https://rubygems.org/gems/namae) gem, and you likely will get better performance using those gems directly if parsing a large number of human names.
+
+Parse authorships with names separated by `;` and each authorship set separated by `\r\n`:
+```ruby
+Bonamia.parse(names: 'Henry Robert Nicollon des Abbayes; Groom Q\r\nMrs. John Errol Chandos Aberdeen') #  => MultiJson object
+```
+
+---
 
 ## Development
 
@@ -71,7 +86,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/Specie
 
 ## License
 
-The gem is available as open source under the terms of the [NCSA/Illinois](https://opensource.org/licenses/NCSA).
+The gem is available as open source under the terms of the [NCSA/Illinois](https://github.com/SpeciesFileGroup/bonamia/blob/main/LICENSE.txt) license. You can learn more about the NCSA license on [Wikipedia](https://en.wikipedia.org/wiki/University_of_Illinois/NCSA_Open_Source_License) and compare it with other open source licenses at the [Open Source Initiative](https://opensource.org/license/uoi-ncsa-php/).
 
 ## Code of Conduct
 
