@@ -23,22 +23,58 @@ Or install it yourself as:
 
 ---
 ### Suggest Collector Names
-Get collector name suggestions:
+Get collector name suggestions with a limit of 5:
 ```ruby
-Bonamia.suggest('Smith, Ja', limit: 1) #  => MultiJson object
+Bonamia.suggest('Smith, Ja', limit: 5) #  => MultiJson object
+```
+Filter suggestions to only public profiles
+```ruby
+Bonamia.suggest('Smith, Ja', is_public: true) #  => MultiJson object
+```
+Filter suggestions to only people that have occurrences associated with them:
+```ruby
+Bonamia.suggest('Smith, Ja', has_occurrences: true) #  => MultiJson object
 ```
 
 ---
 ### Search Collectors
-Search for collector:
+Search for a collector by name:
 ```ruby
-Bonamia.search_people('Thomas McElrath', families_collected: 'Monotomidae') #  => MultiJson object
+Bonamia.search_people('Thomas McElrath') #  => MultiJson object
 ```
+
+Filter the people search by taxonomic families_collected or taxonomic families_identified. If strict is set to true, then matches must include the taxonomic families.
+```ruby
+Bonamia.search_people('Thomas McElrath', families_collected: 'Monotomidae', strict: true) #  => MultiJson object
+```
+```ruby
+Bonamia.search_people('Thomas McElrath', families_identified: 'Monotomidae', strict: true) #  => MultiJson object
+```
+
+Filter the search by whether the person was living on the specimen collection/identification date. If strict is set to true, it requires that they were alive on the date.
+```ruby
+Bonamia.search_people('Smith', date: '1580-01-02', strict: true) #  => MultiJson object
+```
+
+Setting the callback parameter returns [JSON-P](https://en.wikipedia.org/wiki/JSONP) wrapped in the provided callback string.
+```ruby
+Bonamia.search_people('Smith', callback: 'myFunction') #  => JSON-P object
+```
+
+Use the page parameter for pagination of the search results:
+```ruby
+Bonamia.search_people('Smith', page: 2) #  => MultiJson object
+```
+
 ---
 ### Search Occurrences
 Search for occurrences by [GBIF](https://gbif.org) [datasetID](https://www.gbif.org/dataset/f86a681d-7db8-483b-819a-248def18b70a) and [occurrenceID](https://www.gbif.org/occurrence/1804069383):
 ```ruby
 Bonamia.search_occurrences('f86a681d-7db8-483b-819a-248def18b70a', '7a1daa39-8d7c-d7c4-968f-799d58b3c7b0') #  => MultiJson object
+```
+Setting the callback parameter returns [JSON-P](https://en.wikipedia.org/wiki/JSONP) wrapped in the provided callback string.
+```ruby
+Bonamia.search_occurrences('f86a681d-7db8-483b-819a-248def18b70a', '7a1daa39-8d7c-d7c4-968f-799d58b3c7b0', callback: 'myFunction') #  => JSON-P object
 ```
 
 ---
@@ -49,7 +85,7 @@ Bonamia.person('0000-0001-7618-5230') #  => JSON-LD object
 ```
 ---
 ### Specimens
-Get a person's specimens by their [ORCID](https://orcid.org/) or [WikiData](https://wikidata.org) identifiers:
+Get a person's specimens by their [ORCID](https://orcid.org/) or [WikiData](https://wikidata.org) identifiers. Use the page parameter for pagination.
 ```ruby
 Bonamia.person('0000-0001-7618-5230', specimens: true) #  => JSON-LD object
 ```
