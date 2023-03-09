@@ -66,7 +66,10 @@ module Bonamia
   # @param q [String] A single human name
   # @param families_collected [Boolean, nil] Comma-separated list of taxonomic families collected
   # @param families_identified [Boolean, nil] Comma-separated list of taxonomic families identified
-  # @param date [String, nil] A date expressed as YYYY-MM-DD, YYYY-MM, or YYYY
+  # @param date [String, nil] Filters to alive during date (format: YYYY-MM-DD, YYYY-MM, or YYYY)
+  #   e.g., Captain John Smith was alive from 1580-01-01 through 1631-06-21, so setting date to any value between
+  #         their birth/death date will include Captain John in the search results
+  #   Warning: Setting exactly equal to a person's birthdate, excludes them from search!
   # @param strict [Boolean, nil] Must include vs should include on families_identified, families_collected, date
   # @param callback [String, nil] A string to produce a JSONP response instead of a JSON-LD response
   #
