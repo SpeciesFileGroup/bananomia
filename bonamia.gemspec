@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.summary       = "Bionomia Client"
   s.description   = "Bonamia is a low-level wrapper around the Bionomia API."
   s.homepage      = "https://github.com/SpeciesFileGroup/bonamia"
-  s.license       = "NCSA/Illinois"
+  s.license       = "NCSA"
   s.required_ruby_version = ">= 2.4.0"
 
  # s.metadata["allowed_push_host"] = "TODO: Set to 'https://mygemserver.com'"
@@ -42,8 +42,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency "vcr", "~> 6.0"
   s.add_development_dependency "webmock", "~> 3.18"
 
-  s.add_runtime_dependency "faraday", "~> 1.0"
-  s.add_runtime_dependency "faraday_middleware", "~> 1.2" # requires 1.0
+  s.add_runtime_dependency "faraday", "~> 2.2"
+  s.add_runtime_dependency "faraday-follow_redirects", ">= 0.1", "< 0.4"
   s.add_runtime_dependency "multi_json", "~> 1.15"
 
   # TODO: comment out

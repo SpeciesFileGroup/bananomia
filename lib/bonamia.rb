@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "erb"
+require_relative "bonamia/error"
 require_relative "bonamia/version"
 require_relative "bonamia/request"
 require "bonamia/helpers/configuration"
