@@ -4,7 +4,7 @@ class TestSuggest < Test::Unit::TestCase
 
   def test_suggest
     VCR.use_cassette("test_suggest") do
-      res = Bonamia.suggest('anning')
+      res = Bananomia.suggest('anning')
       assert_equal('Q230491', res[0]['wikidata'])
     end
   end

@@ -3,7 +3,7 @@
 # $LOAD_PATH.unshift File.expand_path("../lib", __dir__)
 
 require 'test/unit'
-require 'bonamia'
+require 'bananomia'
 require 'vcr'
 
 # TODO: remove

@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 require "erb"
-require_relative "bonamia/error"
-require_relative "bonamia/version"
-require_relative "bonamia/request"
-require "bonamia/helpers/configuration"
+require_relative "bananomia/error"
+require_relative "bananomia/version"
+require_relative "bananomia/request"
+require "bananomia/helpers/configuration"
 
-module Bonamia
+module Bananomia
   extend Configuration
 
   define_setting :base_url, "https://api.bionomia.net/"

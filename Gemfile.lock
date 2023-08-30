@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bonamia (0.1.0)
+    bananomia (0.1.0)
       faraday (~> 2.2)
       faraday-follow_redirects (>= 0.1, < 0.4)
       multi_json (~> 1.15)
@@ -40,7 +40,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  bonamia!
+  bananomia!
   bundler (~> 2.1, >= 2.1.4)
   byebug
   minitest (~> 5.0)

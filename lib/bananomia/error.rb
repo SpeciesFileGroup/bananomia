@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-module Bonamia
-    # Custom error class for rescuing from all Bonamia errors
+module Bananomia
+    # Custom error class for rescuing from all Bananomia errors
     class Error < StandardError; end
   
     # Raised when Bionomia returns the HTTP status code 400

@@ -1,24 +1,24 @@
 # frozen_string_literal: true
 
-require_relative "lib/bonamia/version"
+require_relative "lib/bananomia/version"
 
 Gem::Specification.new do |s|
-  s.name          = "bonamia"
-  s.version       = Bonamia::VERSION
+  s.name          = "bananomia"
+  s.version       = Bananomia::VERSION
   s.authors       = ["Geoff Ower, Matt Yoder"]
   s.email         = ["gdower@illinois.edu"]
 
   s.summary       = "Bionomia Client"
-  s.description   = "Bonamia is a low-level wrapper around the Bionomia API."
-  s.homepage      = "https://github.com/SpeciesFileGroup/bonamia"
+  s.description   = "Bananomia is a low-level wrapper around the Bionomia API."
+  s.homepage      = "https://github.com/SpeciesFileGroup/bananomia"
   s.license       = "NCSA"
   s.required_ruby_version = ">= 2.4.0"
 
  # s.metadata["allowed_push_host"] = "TODO: Set to 'https://mygemserver.com'"
 
   s.metadata["homepage_uri"] = s.homepage
-  s.metadata["source_code_uri"] = "https://github.com/SpeciesFileGroup/bonamia"
-  s.metadata["changelog_uri"] = "https://github.com/SpeciesFileGroup/bonamia/releases/tag/v#{s.version}"
+  s.metadata["source_code_uri"] = "https://github.com/SpeciesFileGroup/bananomia"
+  s.metadata["changelog_uri"] = "https://github.com/SpeciesFileGroup/bananomia/releases/tag/v#{s.version}"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.

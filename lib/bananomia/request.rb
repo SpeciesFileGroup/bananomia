@@ -2,7 +2,7 @@ require_relative "faraday" # !! Potential ruby 3.0 difference in module loading?
 require "faraday/follow_redirects"
 require_relative "utils"
 
-module Bonamia
+module Bananomia
 
   class Request
     attr_accessor :endpoint
@@ -27,7 +27,7 @@ module Bonamia
       @names = args[:names]&.gsub('\n', "\n")&.gsub('\r', "\r")
       @limit = args[:limit]
       @page = args[:page]
-      @options = args[:options] # TODO: not added at bonamia.rb
+      @options = args[:options] # TODO: not added at bananomia.rb
     end
 
     def perform
@@ -52,13 +52,13 @@ module Bonamia
       Faraday::Utils.default_space_encoding = "+"
 
       conn = if verbose
-               Faraday.new(url: Bonamia.base_url) do |f|
+               Faraday.new(url: Bananomia.base_url) do |f|
                  f.response :logger
                  f.use Faraday::ColrapiErrors::Middleware
                  f.adapter Faraday.default_adapter
                end
              else
-               Faraday.new(url: Bonamia.base_url) do |f|
+               Faraday.new(url: Bananomia.base_url) do |f|
                  f.use Faraday::ColrapiErrors::Middleware
                  f.adapter Faraday.default_adapter
                end

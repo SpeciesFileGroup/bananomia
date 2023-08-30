@@ -12,17 +12,17 @@ module Faraday
         @app.call(env).on_complete do |response|
           case response[:status].to_i
           when 400
-            raise Bonamia::BadRequest, error_message_400(response)
+            raise Bananomia::BadRequest, error_message_400(response)
           when 404
-            raise Bonamia::NotFound, error_message_400(response)
+            raise Bananomia::NotFound, error_message_400(response)
           when 500
-            raise Bonamia::InternalServerError, error_message_500(response, "Something is technically wrong.")
+            raise Bananomia::InternalServerError, error_message_500(response, "Something is technically wrong.")
           when 502
-            raise Bonamia::BadGateway, error_message_500(response, "The server returned an invalid or incomplete response.")
+            raise Bananomia::BadGateway, error_message_500(response, "The server returned an invalid or incomplete response.")
           when 503
-            raise Bonamia::ServiceUnavailable, error_message_500(response, "Crossref is rate limiting your requests.")
+            raise Bananomia::ServiceUnavailable, error_message_500(response, "Crossref is rate limiting your requests.")
           when 504
-            raise Bonamia::GatewayTimeout, error_message_500(response, "504 Gateway Time-out")
+            raise Bananomia::GatewayTimeout, error_message_500(response, "504 Gateway Time-out")
           end
         end
       end

@@ -3,10 +3,10 @@
 # require "multi_json"
 
 ##
-# Bonamia::RequestCursor
+# Bananomia::RequestCursor
 #
 ## Class to perform HTTP requests to the Catalog of Life API
-module Bonamia
+module Bananomia
   class RequestCursor
     attr_accessor :endpoint
     attr_accessor :engine
