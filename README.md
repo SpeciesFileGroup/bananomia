@@ -105,7 +105,7 @@ Bananomia.occurrence('477976412') #  => JSON-LD object
 
 Parse authorships with names separated by `;` and each authorship set separated by `\r\n`:
 ```ruby
-Bananomia.parse(names: 'Henry Robert Nicollon des Abbayes; Groom Q\r\nMrs. John Errol Chandos Aberdeen') #  => MultiJson object
+Bananomia.parse('Henry Robert Nicollon des Abbayes; Groom Q\r\nMrs. John Errol Chandos Aberdeen') #  => MultiJson object
 ```
 
 ---
