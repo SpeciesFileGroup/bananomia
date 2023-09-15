@@ -1,6 +1,8 @@
 # Bananomia
 
-This is a Ruby wrapper on the [Bionomia](https://bionomia.net) API. Code follow the spirit/approach of the Gem [serrano](https://github.com/sckott/serrano), and indeed much of the wrapping utility is copied 1:1 from that repo, thanks [@sckott](https://github.com/sckott).
+![Bananomia logo](https://github.com/SpeciesFileGroup/bananomia/assets/8573609/cb3f07e6-081f-4187-a11f-3aa1f8b24106)
+
+Bananomia is a Ruby wrapper on the [Bionomia](https://bionomia.net) API. Code follow the spirit/approach of the Gem [serrano](https://github.com/sckott/serrano), and indeed much of the wrapping utility is copied 1:1 from that repo, thanks [@sckott](https://github.com/sckott).
 
 ## Installation
 
