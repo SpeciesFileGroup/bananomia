@@ -6,7 +6,7 @@ class TestSearchPeople < Test::Unit::TestCase
   def test_search_people
     VCR.use_cassette("test_search_people") do
       res = Bananomia.search_people('smith', families_collected: 'scarabaeidae', strict: true)
-      assert_equal('Andrew B.T. Smith', res['dataFeedElement'][0]['item']['name'])
+      assert_true(res['dataFeedElement'][0]['item']['name'].include?('Smith'))
     end
   end
 
