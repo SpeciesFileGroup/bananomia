@@ -6,9 +6,6 @@ require 'test/unit'
 require 'bananomia'
 require 'vcr'
 
-# TODO: remove
-require 'byebug'
-
 VCR.configure do |c|
   c.cassette_library_dir = 'test/fixtures/vcr'
   c.hook_into :webmock
