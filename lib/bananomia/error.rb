@@ -21,4 +21,4 @@ module Bananomia
   
     # Raised when Bionomia returns the HTTP status code 504
     class GatewayTimeout < Error; end
-  end
+end
