@@ -1,4 +1,5 @@
 ## [Unreleased]
+ - Updated license from NCSA to MIT
 
 ## [0.1.1] - 2024-09-11
  - Updated documentation

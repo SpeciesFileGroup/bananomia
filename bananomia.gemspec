@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.summary       = "Bionomia Client"
   s.description   = "Bananomia is a low-level wrapper around the Bionomia API."
   s.homepage      = "https://github.com/SpeciesFileGroup/bananomia"
-  s.license       = "NCSA"
+  s.license       = "MIT"
   s.required_ruby_version = ">= 2.5.0"
 
  # s.metadata["allowed_push_host"] = "TODO: Set to 'https://mygemserver.com'"
