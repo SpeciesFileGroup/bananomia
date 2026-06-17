@@ -64,7 +64,7 @@ module Bananomia
                end
              end
 
-      conn.headers['Accept'] = 'application/ld+json,*/*'
+      conn.headers['Accept'] = 'application/ld+json'
       conn.headers[:user_agent] = make_user_agent
       conn.headers["X-USER-AGENT"] = make_user_agent
 
