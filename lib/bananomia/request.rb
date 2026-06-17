@@ -54,12 +54,12 @@ module Bananomia
       conn = if verbose
                Faraday.new(url: Bananomia.base_url) do |f|
                  f.response :logger
-                 f.use Faraday::ColrapiErrors::Middleware
+                 f.use Faraday::BananomiaErrors::Middleware
                  f.adapter Faraday.default_adapter
                end
              else
                Faraday.new(url: Bananomia.base_url) do |f|
-                 f.use Faraday::ColrapiErrors::Middleware
+                 f.use Faraday::BananomiaErrors::Middleware
                  f.adapter Faraday.default_adapter
                end
              end
@@ -70,7 +70,7 @@ module Bananomia
 
       res = conn.get(endpoint, opts)
 
-      # Handles ChecklistBank endpoints that do not return JSON
+      # Handles Bionomia endpoints that do not return JSON
       begin
         MultiJson.load(res.body)
       rescue MultiJson::ParseError

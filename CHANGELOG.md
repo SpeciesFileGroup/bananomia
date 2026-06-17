@@ -1,4 +1,8 @@
 ## [Unreleased]
+ - Fixed copy-paste residue from the upstream serrano/colrapi template:
+    - Renamed `Faraday::ColrapiErrors` middleware module to `Faraday::BananomiaErrors`
+    - Changed the 503 error message from "Crossref is rate limiting your requests." to "Bionomia is rate limiting your requests."
+    - Fixed a comment in `Bananomia::Request#perform` that referred to ChecklistBank instead of Bionomia
 
 ## [0.1.2] - 2026-06-17
  - Allow Ruby 4.0.0:

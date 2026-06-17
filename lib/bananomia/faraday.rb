@@ -5,7 +5,7 @@ require "multi_json"
 
 # @private
 module Faraday
-  module ColrapiErrors
+  module BananomiaErrors
     # @private
     class Middleware < Faraday::Middleware
       def call(env)
@@ -20,7 +20,7 @@ module Faraday
           when 502
             raise Bananomia::BadGateway, error_message_500(response, "The server returned an invalid or incomplete response.")
           when 503
-            raise Bananomia::ServiceUnavailable, error_message_500(response, "Crossref is rate limiting your requests.")
+            raise Bananomia::ServiceUnavailable, error_message_500(response, "Bionomia is rate limiting your requests.")
           when 504
             raise Bananomia::GatewayTimeout, error_message_500(response, "504 Gateway Time-out")
           end
